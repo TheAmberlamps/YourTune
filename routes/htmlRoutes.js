@@ -19,6 +19,7 @@ module.exports = function(app) {
       res.render("example", {
         example: dbExample
       });
+    });
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
