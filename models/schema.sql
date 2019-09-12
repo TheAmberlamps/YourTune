@@ -6,8 +6,7 @@ CREATE TABLE users (
     user_name VARCHAR(50) NOT NULL,
     pass VARCHAR(50) NOT NULL,
     email VARCHAR(50) NOT NULL,
-    card_num INT(20) NOT NULL,
-    purchases VARCHAR(50), 
+    card_num INT(20) NOT NULL, 
     PRIMARY KEY (user_id)
 );
 
