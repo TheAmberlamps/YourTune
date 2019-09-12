@@ -1,8 +1,8 @@
 module.exports = function(sequelize, DataTypes) {
   var Purchase = sequelize.define("purchase", {
     id: DataTypes.INTEGER,
-    u_id: DataTypes.INTEGER,
-    t_id: DataTypes.INTEGER
+    uId: DataTypes.INTEGER,
+    tId: DataTypes.INTEGER
   });
   return Purchase;
 };
