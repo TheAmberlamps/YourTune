@@ -1,10 +1,10 @@
 module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define("user", {
-    user_id: DataTypes.INTEGER,
-    user_name: DataTypes.STRING,
+    userId: DataTypes.INTEGER,
+    userName: DataTypes.STRING,
     pass: DataTypes.STRING,
     email: DataTypes.STRING,
-    card_num: DataTypes.INTEGER
+    cardNum: DataTypes.INTEGER
   });
   return User;
 };
