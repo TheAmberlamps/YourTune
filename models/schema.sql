@@ -16,7 +16,7 @@ CREATE TABLE tracks (
     trackName VARCHAR (250) NOT NULL,
     trackUrlFull VARCHAR(250) NOT NULL,
     trackUrlPreview VARCHAR(250) NOT NULL,
-    userId INT FOREIGN KEY REFERENCES users(userId),
+    FOREIGN KEY (userId) REFERENCES users(userId),
     PRIMARY KEY (trackId)
 );
 
@@ -24,7 +24,7 @@ CREATE TABLE purchases (
     id INT NOT NULL AUTO_INCREMENT,
     uId INT NOT NULL,
     tId INT NOT NULL,
-    uId INT FOREIGN KEY REFERENCES users(userId),
-    tId INT FOREIGN KEY REFERENCES tracks(trackId),
+    FOREIGN KEY (uId) REFERENCES users(userId),
+    FOREIGN KEY (tId) REFERENCES tracks(trackId),
     PRIMARY KEY (id)
 );
