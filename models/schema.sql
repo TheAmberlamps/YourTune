@@ -1,5 +1,6 @@
 DROP DATABASE IF EXISTS app_db;
 CREATE DATABASE app_db;
+USE app_db;
 
 CREATE TABLE users (
     userId INT NOT NULL AUTO_INCREMENT,
@@ -15,13 +16,15 @@ CREATE TABLE tracks (
     trackName VARCHAR (250) NOT NULL,
     trackUrlFull VARCHAR(250) NOT NULL,
     trackUrlPreview VARCHAR(250) NOT NULL,
-    userId INT FOREIGN KEY REFERENCES users(userId),
+    FOREIGN KEY (userId) REFERENCES users(userId),
     PRIMARY KEY (trackId)
 );
 
 CREATE TABLE purchases (
     id INT NOT NULL AUTO_INCREMENT,
-    uId INT FOREIGN KEY REFERENCES users(user_id),
-    tId INT FOREIGN KEY REFERENCES tracks(track_id),
+    uId INT NOT NULL,
+    tId INT NOT NULL,
+    FOREIGN KEY (uId) REFERENCES users(userId),
+    FOREIGN KEY (tId) REFERENCES tracks(trackId),
     PRIMARY KEY (id)
 );
