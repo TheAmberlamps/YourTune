@@ -3,31 +3,28 @@ CREATE DATABASE app_db;
 USE app_db;
 
 CREATE TABLE users (
-    user_id INT NOT NULL AUTO_INCREMENT,
-    user_name VARCHAR(50) NOT NULL,
+    userId INT NOT NULL AUTO_INCREMENT,
+    userName VARCHAR(50) NOT NULL,
     pass VARCHAR(50) NOT NULL,
     email VARCHAR(50) NOT NULL,
-    card_num VARCHAR(20) NOT NULL,
-    purchases VARCHAR(50),
-    PRIMARY KEY (user_id)
+    cardNum INT(20) NOT NULL, 
+    PRIMARY KEY (userId)
 );
 
 CREATE TABLE tracks (
-    track_id INT NOT NULL AUTO_INCREMENT,
-    track_name VARCHAR (250) NOT NULL,
-    track_url_full VARCHAR(250) NOT NULL,
-    track_url_preview VARCHAR(250) NOT NULL,
-    user_id INT NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES users(user_id),
-    PRIMARY KEY (track_id)
-
+    trackId INT NOT NULL AUTO_INCREMENT,
+    trackName VARCHAR (250) NOT NULL,
+    trackUrlFull VARCHAR(250) NOT NULL,
+    trackUrlPreview VARCHAR(250) NOT NULL,
+    userId INT FOREIGN KEY REFERENCES users(userId),
+    PRIMARY KEY (trackId)
 );
 
 CREATE TABLE purchases (
     id INT NOT NULL AUTO_INCREMENT,
     u_id INT NOT NULL,
     t_id INT NOT NULL,
-    FOREIGN KEY (t_id) REFERENCES tracks(track_id),
-    FOREIGN KEY (u_id) REFERENCES users(user_id),
+    uId INT FOREIGN KEY REFERENCES users(userId),
+    tId INT FOREIGN KEY REFERENCES tracks(trackId),
     PRIMARY KEY (id)
 );
