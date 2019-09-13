@@ -22,8 +22,8 @@ CREATE TABLE tracks (
 
 CREATE TABLE purchases (
     id INT NOT NULL AUTO_INCREMENT,
-    u_id INT NOT NULL,
-    t_id INT NOT NULL,
+    uId INT NOT NULL,
+    tId INT NOT NULL,
     uId INT FOREIGN KEY REFERENCES users(userId),
     tId INT FOREIGN KEY REFERENCES tracks(trackId),
     PRIMARY KEY (id)
