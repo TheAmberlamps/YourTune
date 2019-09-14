@@ -1,3 +1,71 @@
-.list-group-item {
-  line-height: 2.5;
+* {
+  padding: 0%;
+  margin: 0%;
+  font-family: sans-serif;
+}
+
+body {
+  color: wheat;
+  background-color: black;
+}
+
+h1 {
+  text-align: center;
+  padding: 2%;
+  font-size: 60px;
+}
+
+ul {
+  text-decoration: none;
+  text-align: center;
+  padding-bottom: 2%;
+  border-bottom: 1px dotted wheat;
+}
+
+a {
+  color: wheat;
+  text-decoration: none;
+}
+
+a:hover {
+  color: wheat;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+li {
+  display: inline;
+  margin-right: 3%;
+  font-size: 25px;
+}
+
+h2 {
+  margin-top: 5px;
+  margin-left: 62px;
+  color: white;
+}
+
+#songs {
+  margin-top: 3%;
+  text-align: center;
+  margin-right: 4px;
+}
+
+#form {
+  margin: 5%;
+  border: 1px solid sienna;
+  padding: 1%;
+}
+
+#contact-form {
+  margin: 5%;
+  border: 1px solid sienna;
+  padding: 1%;
+}
+
+footer {
+  background-color: wheat;
+  color: black;
+  padding: 1%;
+  margin-top: 23px;
 }
