@@ -1,24 +1,67 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
-    });
+  /*
+  ****************************
+  TRACKS
+  ****************************
+  */
+
+  // get all tracks
+  app.get("/api/tracks", (req, res) => {
+    db.track.findAll({}).then(data => res.json(data));
   });
 
-  // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
-    });
+  // get all tracks assosciated with a user
+  app.get("/api/user/tracks/:id", function(req, res) {
+    db.track
+      .findOne({
+        where: {
+          uId: req.params.id
+        }
+      })
+      .then(data => {
+        res.json(data);
+      });
   });
 
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.json(dbExample);
-    });
+  // Create a track
+  app.post("/api/track", (req, res) => {
+    const track = {
+      title: req.body.title,
+      download: req.body.download,
+      preview: req.body.preview,
+      user: req.body.user
+    };
+    console.log(track);
+    // validation
+    for (key in track) {
+      if (!track[key]) {
+        res.status(500).send("ERROR make sure " + key + " is set in body");
+        return;
+      }
+    }
+    db.track.create(track).then(data => res.json(data));
+  });
+
+  // update track
+  app.put("/api/track/:id", (req, res) => {
+    const track = {
+      title: req.body.title,
+      download: req.body.download,
+      preview: req.body.preview,
+      user: req.body.user
+    };
+
+    db.track.update(track, { where: { id: req.params.id } }).tnen(data => res.json(data));
+  });
+
+  // delete track
+  app.delete("/api/track/:id", (req, res) => {
+    db.track
+      .destroy({
+        where: { id: req.params.id }
+      })
+      .then(data => res.json(data));
   });
 };
