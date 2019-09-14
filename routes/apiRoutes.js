@@ -3,6 +3,33 @@ var db = require("../models");
 module.exports = function(app) {
   /*
   ****************************
+  USERS
+  ****************************
+  */
+  // Create a user
+  app.post("/api/user", (req, res) => {
+    console.log("hit");
+    db.user
+      .findOne({
+        where: {
+          email: req.body.email
+        }
+      })
+      .then(response => {
+        if (!response) {
+          db.user.create(req.body).then(data => {
+            res.json(data);
+          });
+        } else {
+          res.status(500).send(response);
+        }
+      })
+      .catch(err => {
+        throw err;
+      });
+  });
+  /*
+  ****************************
   TRACKS
   ****************************
   */
