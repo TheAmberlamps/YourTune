@@ -15,6 +15,17 @@ h1 {
   font-size: 60px;
 }
 
+a {
+  color: wheat;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 ul {
   text-decoration: none;
   text-align: center;
@@ -22,21 +33,14 @@ ul {
   border-bottom: 1px dotted wheat;
 }
 
-a {
-  color: wheat;
-  text-decoration: none;
-}
-
-a:hover {
-  color: wheat;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-li {
+ul li {
   display: inline;
   margin-right: 3%;
   font-size: 25px;
+}
+
+ul li:hover {
+  color: white;
 }
 
 h2 {
@@ -51,10 +55,30 @@ h2 {
   margin-right: 4px;
 }
 
+footer {
+  text-align: center;
+  background-color: wheat;
+  color: black;
+  padding: 1%;
+  margin-top: 23px;
+}
+
 #form {
   margin: 5%;
   border: 1px solid sienna;
   padding: 1%;
+}
+
+#form .btn:hover {
+  color: brown;
+  background-color: white;
+}
+
+#form .btn {
+  color: white;
+  background-color: brown;
+  margin-top: 2px;
+  width: 100%;
 }
 
 #contact-form {
@@ -63,9 +87,15 @@ h2 {
   padding: 1%;
 }
 
-footer {
-  background-color: wheat;
-  color: black;
-  padding: 1%;
-  margin-top: 23px;
+#contact-form .btn:hover {
+  color: brown;
+  background-color: white;
 }
+
+#contact-form .btn {
+  color: white;
+  background-color: brown;
+  margin-top: 2px;
+  width: 100%;
+}
+/*# sourceMappingURL=styles.css.map */
