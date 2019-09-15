@@ -2,29 +2,33 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-  <link rel="stylesheet" type="text/css" href="styles/styles.css" />
-  <title>~~YouTune~~</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="styles/styles.css" />
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/1.0/auth0-spa-js.production.js"></script>
+    <title>~~YouTune~~</title>
 </head>
 
 <body>
-  <h1>~~YouTune~~</h1>
-  <ul>
-    <li><a href="index">All Songs</a></li>
-    <li><a href="topsong">Top 5 Songs</a></li>
-    <li><a href="favorites">Favorties</a></li>
-    <li><a href="buysong">Buy Songs</a></li>
-    <li><a href="contact">Contact</a></li>
-  </ul>
-  {{{body}}}
+    <h1>~~YouTune~~</h1>
+    <button id="login" onclick="login()">Log In</button>
+    <button id="logout" onclick="logout()">Log Out</button>
+    <ul>
+        <li><a href="index">All Songs</a></li>
+        <li><a href="topsong">Top 5 Songs</a></li>
+        <li><a href="favorites">Favorties</a></li>
+        <li><a href="buysong">Buy Songs</a></li>
+        <li><a href="contact">Contact</a></li>
+    </ul>
+    {{{body}}}
 
-  <footer>
-    &copy; 2019 YouTune
-  </footer>
+    <footer>
+        &copy; 2019 YouTune
+    </footer>
+    <script src="js/auth.js"></script>
 </body>
 
 </html>
