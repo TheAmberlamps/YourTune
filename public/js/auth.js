@@ -23,30 +23,28 @@ const configureClient = async () => {
 
   auth0 = await createAuth0Client({
     domain: config.domain,
-    client_id: config.clientId,
-    redirect_uri: "http://localhost:3000"
+    client_id: config.clientId
   });
 };
 
+// on initial load
 window.addEventListener("load", async () => {
+  console.log("loading");
   await configureClient();
   const isAuthenticated = await auth0.isAuthenticated();
-  updateUI();
+
+    await updateUI();
   if (isAuthenticated) {
     user = await auth0.getUser();
-    console.log(user.email);
-
-    const response = await fetch({
+    // add user to database
+    const response = await fetch("/api/user", {
       method: "POST",
-      url: "/api/user",
       headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
+        "Content-type": "application/json"
       },
       body: JSON.stringify({ email: user.email })
     });
-    const content = await response.json();
-    console.log(content);
+    user = await response.json();
     return;
   }
   // NEW - check for the code and state parameters
@@ -54,6 +52,7 @@ window.addEventListener("load", async () => {
   if (query.includes("code=") && query.includes("state=")) {
     // Process the login state
     await auth0.handleRedirectCallback();
+    await updateUI();
     // Use replaceState to redirect the user away and remove the querystring parameters
     window.history.replaceState({}, document.title, "/");
   }
@@ -61,6 +60,7 @@ window.addEventListener("load", async () => {
 
 const updateUI = async () => {
   const isAuthenticated = await auth0.isAuthenticated();
+  console.log("Authenticated: ", isAuthenticated);
   document.getElementById("logout").disabled = !isAuthenticated;
   document.getElementById("login").disabled = isAuthenticated;
 };
