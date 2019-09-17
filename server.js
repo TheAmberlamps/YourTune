@@ -20,11 +20,11 @@ app.engine(
 );
 app.set("view engine", "handlebars");
 
+// exphbs.getPartials().then;
+
 // Routes
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
-
-// Seeds
 
 var syncOptions = { force: true };
 

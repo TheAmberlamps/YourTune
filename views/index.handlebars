@@ -1,19 +1,16 @@
 <h1>All Songs</h1>
 
 <div id="songs">
-  <img src="img.png" alt="..." class="img-thumbnail" />
-  <img src="img.png" alt="..." class="img-thumbnail" />
-  <img src="img.png" alt="..." class="img-thumbnail" />
-  <br />
-  <br />
-  <img src="img.png" alt="..." class="img-thumbnail" />
-  <img src="img.png" alt="..." class="img-thumbnail" />
-  <img src="img.png" alt="..." class="img-thumbnail" />
-  <br />
-  <br />
-  <img src="/views/img.png" alt="..." class="img-thumbnail" />
-  <img src="views/img.png" alt="..." class="img-thumbnail" />
-  <img src="img.png" alt="..." class="img-thumbnail" />
+  <ul>
+    {{#each tracks}}
+      {{> track/track-block}}
+      <br><br>
+    {{/each}}
+  </ul>
+</div>
+
+<div id="testsec">
+  <iframe class="songbox" id="{{id}}" width="33%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="{{preview}}"></iframe>
 </div>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
