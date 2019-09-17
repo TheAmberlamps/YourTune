@@ -3,7 +3,11 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    res.render("index");
+    db.track.findAll({}).then(function(data) {
+      res.render("index", {
+        tracks: data
+      });
+    });
   });
 
   app.get("/topsong", function(req, res) {
