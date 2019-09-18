@@ -1,23 +1,36 @@
-<h2>Contact:</h2>
+<h2>
+    Buy Your Favorite Songs...
+</h2>
 
-<form id="contact-form">
-    <div class="form-group">
-        <label for="exampleInputEmail1">Full Name</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-            placeholder="Name" />
-        <div class="form-group">
-            <label for="exampleFormControlInput1">Email</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email" />
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
-        </div>
-        <div class="form-group">
-            <label for="exampleFormControlTextarea1">Textarea</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
-        <button class="btn" type="submit" class="btn btn-primary">Submit</button>
+<form id="form">
+
+    <div id="form-1">
+
+        <h3>Address:</h3>
+
+        <label for="fname">Full Name</label><br>
+        <input id="input" type="text" id="fname" name="text" placeholder="Full Name" required><br>
+        <label for="email"> Email</label><br>
+        <input id="input" type="text" id="email" name="email" placeholder="youtune@example.com" required><br>
+    </div>
+    <div id="form-2">
+        <h3>Payment:</h3>
+
+        <label for="cname">Name on Card:</label><br>
+        <input type="text" id="input" name="cardname" placeholder="John More Doe" required><br>
+        <label for="ccnum">Credit card number</label><br>
+        <input type="text" id="input" name="cardnumber" placeholder="1111-2222-3333-4444" required><br>
+        <label for="expmonth">Exp Month</label><br>
+        <input type="text" id="input" name="expmonth" placeholder="September" required><br>
+
+        <label for="expyear">Exp Year</label><br>
+        <input type="text" id="input" name="expyear" placeholder="2019" required><br>
+
+        <label for="cvv">CVV</label><br>
+        <input type="text" id="input" name="cvv" placeholder="352" required><br>
+        {{!-- </div> --}}
+
+        <input id="submit-btn" type="submit" value="Submit">
+    </div>
     </div>
 </form>
-<br>
