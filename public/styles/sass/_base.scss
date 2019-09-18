@@ -9,20 +9,6 @@ body {
   background-color: $BackgroundClr;
 }
 
-#search-bar {
-  padding: 2%;
-  // background-color: #fff;
-  #search-form {
-    margin: auto;
-    text-align: right;
-  }
-}
-
-#submit-btn {
-  background-color: #fff;
-  color: rgb(122, 113, 95);
-}
-
 h1 {
   text-align: center;
   padding: 2%;
@@ -56,7 +42,6 @@ ul {
 }
 
 h2 {
-  font-size: 40px;
   margin-top: 5px;
   margin-left: 62px;
   color: $SecondHeadingClr;
@@ -73,5 +58,5 @@ footer {
   background-color: $Footer-Bg-Clr;
   color: $Footer-Clr;
   padding: 1%;
-  float: none;
+  margin-top: 23px;
 }
