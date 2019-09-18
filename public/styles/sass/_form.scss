@@ -1,23 +1,29 @@
-@mixin form {
-  margin: 5%;
+#form {
+  width: 50%;
+  margin: auto;
   border: 1px solid $BorderClr;
   padding: 1%;
-  .btn:hover {
-    color: $Submit-Btn-Bg-Clr;
-    background-color: $Submit-Btn-Clr;
+  margin-bottom: 20%;
+  #submit-btn {
+    margin-top: 3%;
+    width: 100%;
+    background-color: $BorderClr;
+    border: none;
   }
-  .btn {
-    color: $Submit-Btn-Clr;
-    background-color: $Submit-Btn-Bg-Clr;
-    margin-top: 2px;
+}
+
+#form-1 {
+  width: 95%;
+  margin: 2%;
+  #input {
     width: 100%;
   }
 }
 
-#form {
-  @include form;
-}
-
-#contact-form {
-  @include form;
+#form-2 {
+  width: 95%;
+  margin: 2%;
+  #input {
+    width: 100%;
+  }
 }

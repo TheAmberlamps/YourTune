@@ -9,6 +9,20 @@ body {
   background-color: black;
 }
 
+#search-bar {
+  padding: 2%;
+}
+
+#search-bar #search-form {
+  margin: auto;
+  text-align: right;
+}
+
+#submit-btn {
+  background-color: #fff;
+  color: #7a715f;
+}
+
 h1 {
   text-align: center;
   padding: 2%;
@@ -44,6 +58,7 @@ ul li:hover {
 }
 
 h2 {
+  font-size: 40px;
   margin-top: 5px;
   margin-left: 62px;
   color: white;
@@ -60,42 +75,39 @@ footer {
   background-color: wheat;
   color: black;
   padding: 1%;
-  margin-top: 23px;
+  float: none;
 }
 
 #form {
-  margin: 5%;
+  width: 50%;
+  margin: auto;
   border: 1px solid sienna;
   padding: 1%;
+  margin-bottom: 20%;
 }
 
-#form .btn:hover {
-  color: brown;
-  background-color: white;
+#form #submit-btn {
+  margin-top: 3%;
+  width: 100%;
+  background-color: sienna;
+  border: none;
 }
 
-#form .btn {
-  color: white;
-  background-color: brown;
-  margin-top: 2px;
+#form-1 {
+  width: 95%;
+  margin: 2%;
+}
+
+#form-1 #input {
   width: 100%;
 }
 
-#contact-form {
-  margin: 5%;
-  border: 1px solid sienna;
-  padding: 1%;
+#form-2 {
+  width: 95%;
+  margin: 2%;
 }
 
-#contact-form .btn:hover {
-  color: brown;
-  background-color: white;
-}
-
-#contact-form .btn {
-  color: white;
-  background-color: brown;
-  margin-top: 2px;
+#form-2 #input {
   width: 100%;
 }
 /*# sourceMappingURL=styles.css.map */
