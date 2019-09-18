@@ -1,66 +1,78 @@
+var user = null;
 var auth0 = null;
-var user;
 
+// LOGIN
 const login = async () => {
-  await auth0.loginWithRedirect({
-    redirect_uri: window.location.origin
-  });
+  await auth0.loginWithPopup({});
+  const isAuthenticated = await auth0.isAuthenticated();
+  if (isAuthenticated) {
+    await onAuthenticated();
+  }
 };
 
+// LOGOUT
 const logout = () => {
   auth0.logout({
     returnTo: window.location.origin
   });
 };
 
-const fetchAuthConfig = () => {
-  return fetch("/auth_config.json");
+// handle button events
+const loginBtn = document.getElementById("login");
+const logoutBtn = document.getElementById("logout");
+loginBtn.addEventListener("click", login);
+logoutBtn.addEventListener("click", logout);
+logoutBtn.classList.add("hidden");
+loginBtn.classList.add("hidden");
+// starts as hidden
+
+const setUI = function(loggedIn) {
+  if (loggedIn) {
+    document.querySelectorAll(".gated").forEach(el => {
+      el.classList.remove("hidden");
+    });
+    loginBtn.classList.add("hidden");
+    logoutBtn.classList.remove("hidden");
+  } else {
+    document.querySelectorAll(".gated").forEach(el => {
+      el.classList.add("hidden");
+    });
+    loginBtn.classList.remove("hidden");
+    logoutBtn.classList.add("hidden");
+  }
 };
 
 const configureClient = async () => {
-  const response = await fetchAuthConfig();
-  const config = await response.json();
-
   auth0 = await createAuth0Client({
-    domain: config.domain,
-    client_id: config.clientId
+    domain: "dev-kh4e71db.auth0.com",
+    client_id: "ClEBrqKGJinsXsfTqeFvlSpmrq466Rdh"
   });
 };
 
+async function onAuthenticated() {
+  setUI(true);
+  user = await auth0.getUser();
+  // add user to database
+  const response = await fetch("/api/user", {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json"
+    },
+    body: JSON.stringify({ email: user.email })
+  });
+  user = await response.json();
+  console.log("User:", user);
+}
+
 // on initial load
 window.addEventListener("load", async () => {
-  console.log("loading");
-  await configureClient();
+  await configureClient(); // Init auth0
   const isAuthenticated = await auth0.isAuthenticated();
 
-    await updateUI();
   if (isAuthenticated) {
-    user = await auth0.getUser();
-    // add user to database
-    const response = await fetch("/api/user", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json"
-      },
-      body: JSON.stringify({ email: user.email })
-    });
-    user = await response.json();
+    onAuthenticated();
     return;
-  }
-  // NEW - check for the code and state parameters
-  const query = window.location.search;
-  if (query.includes("code=") && query.includes("state=")) {
-    // Process the login state
-    await auth0.handleRedirectCallback();
-    await updateUI();
-    // Use replaceState to redirect the user away and remove the querystring parameters
-    window.history.replaceState({}, document.title, "/");
+  } else {
+    setUI(false);
   }
 });
-
-const updateUI = async () => {
-  const isAuthenticated = await auth0.isAuthenticated();
-  console.log("Authenticated: ", isAuthenticated);
-  document.getElementById("logout").disabled = !isAuthenticated;
-  document.getElementById("login").disabled = isAuthenticated;
-};

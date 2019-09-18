@@ -3,7 +3,8 @@ module.exports = function(sequelize, DataTypes) {
     title: DataTypes.STRING,
     download: DataTypes.STRING,
     preview: DataTypes.STRING,
-    user: DataTypes.INTEGER
+    user: DataTypes.INTEGER,
+    price: DataTypes.DECIMAL
   });
   return Track;
 };

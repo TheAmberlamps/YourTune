@@ -2,7 +2,7 @@ require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
 var db = require("./models");
-
+const Seeds = require("./test/seeds");
 var app = express();
 var PORT = process.env.PORT || 3000;
 
@@ -36,7 +36,6 @@ if (process.env.NODE_ENV === "test") {
 
 // Starting the server, syncing our models ------------------------------------/
 db.sequelize.sync(syncOptions).then(function() {
-  const Seeds = require("./test/seeds");
   Seeds();
   app.listen(PORT, function() {
     console.log(

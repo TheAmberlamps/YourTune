@@ -8,7 +8,6 @@ module.exports = function(app) {
   */
   // Create a user
   app.post("/api/user", (req, res) => {
-    console.log("hit");
     db.user
       .findOne({
         where: {
@@ -58,7 +57,8 @@ module.exports = function(app) {
       title: req.body.title,
       download: req.body.download,
       preview: req.body.preview,
-      user: req.body.user
+      user: req.body.user,
+      price: req.body.price
     };
     console.log(track);
     // validation
