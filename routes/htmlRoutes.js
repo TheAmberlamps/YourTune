@@ -27,16 +27,16 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/topsong", function(req, res) {
-    res.render("topsong");
-  });
+  // app.get("/topsong", function(req, res) {
+  //   res.render("topsong");
+  // });
 
-  app.get("/favorites", function(req, res) {
-    res.render("favorites");
-  });
+  // app.get("/favorites", function(req, res) {
+  //   res.render("favorites");
+  // });
 
-  app.get("/buysong", function(req, res) {
-    res.render("buysong");
+  app.get("/shoppingcart", function(req, res) {
+    res.render("shoppingcart");
   });
 
   app.get("/contact", function(req, res) {
