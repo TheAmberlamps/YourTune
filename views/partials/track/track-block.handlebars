@@ -4,13 +4,13 @@
     <div style="display: flex">
       <p class="track-block-price">${{ price }}</p>
       <button>
-        <i class="buyMe fa fa-shopping-cart" aria-hidden="true"></i>
+        <i class="buyMe fa fa-shopping-cart" aria-hidden="true" data-track-id="{{ id }}"></i>
       </button>
     </div>
   </div>
   <iframe
     class="songbox"
-    id="{{ id }}"
+    data-id="{{ id }}"
     width="100%"
     height="150"
     scrolling="no"

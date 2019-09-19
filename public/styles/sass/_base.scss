@@ -7,6 +7,20 @@
   font-weight: normal;
   font-family: sans-serif;
 }
+
+#upload-form {
+  input {
+    width: 100%;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  #submit {
+    border: 1px solid black;
+    width: min-content;
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+}
 span {
   font-size: inherit;
 }
