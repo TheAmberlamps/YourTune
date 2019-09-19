@@ -160,40 +160,57 @@ footer {
   margin-top: 23px;
 }
 
-#form {
+form {
   margin: 5%;
   border: 1px solid sienna;
   padding: 1%;
 }
 
-#form .btn:hover {
-  color: brown;
-  background-color: white;
-}
-
-#form .btn {
-  color: white;
-  background-color: brown;
-  margin-top: 2px;
+form #form-1 {
+  margin-left: 4%;
   width: 100%;
 }
 
-#contact-form {
-  margin: 5%;
-  border: 1px solid sienna;
+form #form-1 label {
+  padding-bottom: 1%;
+}
+
+form #form-1 #input {
+  width: 90%;
+  padding: 1.5%;
+}
+
+form #form-2 {
+  margin-left: 4%;
+  width: 100%;
+}
+
+form label {
+  padding-bottom: 1%;
+}
+
+form #input {
+  width: 90%;
   padding: 1%;
 }
 
-#contact-form .btn:hover {
-  color: brown;
-  background-color: white;
-}
-
-#contact-form .btn {
+form #submit-btn {
   color: white;
   background-color: brown;
-  margin-top: 2px;
-  width: 100%;
+  padding: 1.5%;
+  margin-top: 2%;
+  width: 92%;
+}
+
+form #submit-btn:hover {
+  cursor: pointer;
+}
+
+.h3 {
+  color: brown;
+  margin-top: 3%;
+  margin-bottom: 2%;
+  font-size: 20px;
 }
 
 .navbar {
