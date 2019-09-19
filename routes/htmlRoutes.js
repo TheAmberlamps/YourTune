@@ -27,6 +27,15 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/profile", function(req, res) {
+    db.track.findAll({}).then(function(data) {
+      console.log("Track data: " + data);
+      res.render("profile", {
+        tracks: data
+      });
+    });
+  });
+
   app.get("/topsong", function(req, res) {
     res.render("topsong");
   });

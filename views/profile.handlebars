@@ -1,0 +1,16 @@
+<div id="mySongs">
+  {{#each tracks}}
+    {{#if_eq data user.id}}
+      {{> track/track-block}}
+    {{/if_eq}}
+  {{/each}}
+</div>
+
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+></script>
+<script src="/js/index.js"></script>
+{{!-- <script>Handlebars.registerHelper('ifEquals', function(arg1, arg2, options) {
+    return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
+});</script> --}}
