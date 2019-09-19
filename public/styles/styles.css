@@ -1,50 +1,38 @@
 * {
-  padding: 0%;
-  margin: 0%;
+  color: black;
+  border: none;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
   font-family: sans-serif;
 }
 
-iframe {
-  -webkit-box-shadow: 0 0 6px black;
-          box-shadow: 0 0 6px black;
+span {
+  font-size: inherit;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 body {
-  color: #333;
-  background-color: #fff;
+  background-color: #eee;
+  font-size: 1rem;
+}
+
+p {
+  font-size: 1.25em;
 }
 
 h1 {
   text-align: center;
   padding: 2%;
-  font-size: 60px;
+  font-size: 2rem;
 }
 
-a {
-  color: #333;
-  text-decoration: none;
-}
-
-a:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-ul {
-  text-decoration: none;
-  text-align: center;
-}
-
-ul li {
-  display: inline;
-  margin-right: 3%;
-}
-
-ul li:hover {
-  text-decoration: underline;
+.hidden {
+  display: none;
 }
 
 h2 {
@@ -53,16 +41,9 @@ h2 {
   color: white;
 }
 
-#songs {
-  margin-top: 3%;
-  text-align: center;
-  margin-right: 4px;
-}
-
 footer {
   text-align: center;
-  background-color: black;
-  color: wheat;
+  color: black;
   padding: 1%;
   margin-top: 23px;
 }
@@ -103,24 +84,110 @@ footer {
   width: 100%;
 }
 
-nav {
-  padding: 0.75em;
-  border-bottom: 1px solid sienna;
+.navbar {
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: white;
+  -webkit-box-shadow: 0 3px 0.5rem lightgray;
+          box-shadow: 0 3px 0.5rem lightgray;
+  padding: 1rem;
 }
 
-nav ul li {
+.navbar ul {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 25%;
+  margin-right: 25%;
+  vertical-align: middle;
+}
+
+.navbar ul li {
+  margin: auto 0;
+  margin-right: 3%;
+  text-decoration: none;
+  list-style: none;
+  color: black;
   font-size: 1rem;
 }
 
-nav ul li:hover {
-  color: black;
+.navbar ul li input {
+  font-size: 1rem;
+  border-bottom: 1px solid black;
 }
 
-nav ul #heading {
-  font-size: 29px;
+.navbar ul button#login:hover {
+  background: #5cb85c;
+  color: white;
 }
 
-nav ul #heading:hover {
+.navbar ul button#logout:hover {
+  background: #d9534f;
+  color: white;
+}
+
+.navbar ul button {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  outline: none;
+  background: lightn(#428bca, 10%);
+  border-radius: 1rem;
+  border: none;
+  -webkit-transition: color 0.25s, background-color 0.25s;
+  transition: color 0.25s, background-color 0.25s;
+}
+
+.navbar ul #heading {
+  font-size: 2rem;
+}
+
+.navbar ul #heading:hover {
   text-decoration: none;
+}
+
+.track-block {
+  text-align: left;
+  margin: auto;
+  background: white;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-bottom: 3rem;
+  -webkit-box-shadow: 0 0 3px gray;
+          box-shadow: 0 0 3px gray;
+}
+
+.track-block-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.track-block-header .track-block-title {
+  margin: auto 0;
+  margin-left: 1rem;
+}
+
+.track-block-header .track-block-price {
+  font-style: italic;
+  margin: auto;
+  padding: 0.5rem 1rem;
+}
+
+.track-block .buyMe {
+  float: right;
+  background: #5cb85c;
+  border: none;
+  font-size: 1.25rem;
+  padding: 0.5rem 1rem;
+  color: white;
 }
 /*# sourceMappingURL=styles.css.map */

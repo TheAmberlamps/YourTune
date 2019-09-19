@@ -1,0 +1,62 @@
+.navbar {
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: white;
+  box-shadow: 0 3px 0.5rem lightgray;
+  padding: 1rem;
+
+  ul {
+    width: 100%;
+    display: flex;
+    margin-left: 25%;
+    margin-right: 25%;
+    vertical-align: middle;
+
+    li {
+      margin: auto 0;
+      margin-right: 3%;
+      text-decoration: none;
+      list-style: none;
+      color: black;
+      font-size: 1rem;
+
+      input {
+        font-size: 1rem;
+        border-bottom: 1px solid black;
+      }
+    }
+
+    button#login {
+      &:hover {
+        background: $success;
+        color: white;
+      }
+    }
+    button#logout {
+      &:hover {
+        background: $danger;
+        color: white;
+      }
+    }
+
+    button {
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      outline: none;
+      background: lightn($primary, 10%);
+      border-radius: 1rem;
+      border: none;
+      transition: color 0.25s, background-color 0.25s;
+    }
+
+    #heading {
+      font-size: 2rem;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

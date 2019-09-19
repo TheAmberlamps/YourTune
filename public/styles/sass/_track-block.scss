@@ -1,0 +1,36 @@
+.track-block {
+  text-align: left;
+  margin: auto;
+  background: white;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-bottom: 3rem;
+  box-shadow: 0 0 3px gray;
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+
+    .track-block-title {
+      margin: auto 0;
+      margin-left: 1rem;
+    }
+
+    .track-block-price {
+      font-style: italic;
+      margin: auto;
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  .buyMe {
+    float: right;
+    //background: #333;
+    background: $success;
+    border: none;
+    font-size: 1.25rem;
+    padding: 0.5rem 1rem;
+    color: white;
+  }
+}

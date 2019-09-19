@@ -11,6 +11,8 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/profile", (req, res) => {});
+
   app.get("/topsong", function(req, res) {
     res.render("topsong");
   });
