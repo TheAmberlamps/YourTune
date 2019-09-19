@@ -7,7 +7,7 @@ var app = express();
 var PORT = process.env.PORT || 3000;
 
 // Middleware
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(express.json());
 
@@ -23,8 +23,7 @@ app.set("view engine", "handlebars");
 // exphbs.getPartials().then;
 
 // Routes
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+require("./routes/routes")(app);
 
 var syncOptions = { force: true };
 

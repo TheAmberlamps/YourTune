@@ -8,6 +8,18 @@
   box-shadow: 0 3px 0.5rem lightgray;
   padding: 1rem;
 
+  #cart {
+    font-size: 2rem;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  #profile {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
   ul {
     width: 100%;
     display: flex;

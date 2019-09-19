@@ -1,45 +1,38 @@
 var user = null;
 var auth0 = null;
+var token = window.localStorage.getItem("t") || null;
 
-// LOGIN
+function setUI(loggedIn) {
+  if (loggedIn) {
+    document.getElementById("login").classList.add("hidden");
+    document.getElementById("logout").classList.remove("hidden");
+    document.querySelectorAll(".gated").forEach(el => {
+      el.classList.remove("hidden");
+    });
+  } else {
+    document.getElementById("login").classList.remove("hidden");
+    document.getElementById("logout").classList.add("hidden");
+    document.querySelectorAll(".gated").forEach(el => {
+      el.classList.add("hidden");
+    });
+  }
+}
+
+setUI(false);
+
 const login = async () => {
-  await auth0.loginWithPopup({});
+  const token = await auth0.getTokenWithPopup({});
+  console.log("Token ", token);
   const isAuthenticated = await auth0.isAuthenticated();
   if (isAuthenticated) {
     await onAuthenticated();
   }
 };
 
-// LOGOUT
 const logout = () => {
   auth0.logout({
     returnTo: window.location.origin
   });
-};
-
-// handle button events
-const loginBtn = document.getElementById("login");
-const logoutBtn = document.getElementById("logout");
-loginBtn.addEventListener("click", login);
-logoutBtn.addEventListener("click", logout);
-logoutBtn.classList.add("hidden");
-loginBtn.classList.add("hidden");
-// starts as hidden
-
-const setUI = function(loggedIn) {
-  if (loggedIn) {
-    document.querySelectorAll(".gated").forEach(el => {
-      el.classList.remove("hidden");
-    });
-    loginBtn.classList.add("hidden");
-    logoutBtn.classList.remove("hidden");
-  } else {
-    document.querySelectorAll(".gated").forEach(el => {
-      el.classList.add("hidden");
-    });
-    loginBtn.classList.remove("hidden");
-    logoutBtn.classList.add("hidden");
-  }
 };
 
 const configureClient = async () => {
@@ -51,8 +44,13 @@ const configureClient = async () => {
 
 async function onAuthenticated() {
   setUI(true);
+
   user = await auth0.getUser();
-  // add user to database
+  token = await auth0.getTokenSilently();
+  id_token = await auth0.getIdTokenClaims();
+
+  window.localStorage.setItem("t", token);
+
   const response = await fetch("/api/user", {
     method: "POST",
     headers: {
@@ -61,16 +59,13 @@ async function onAuthenticated() {
     body: JSON.stringify({ email: user.email })
   });
   user = await response.json();
-  console.log("User:", user);
 }
 
-// on initial load
 window.addEventListener("load", async () => {
   await configureClient(); // Init auth0
   const isAuthenticated = await auth0.isAuthenticated();
-
   if (isAuthenticated) {
-    onAuthenticated();
+    await onAuthenticated();
     return;
   } else {
     setUI(false);

@@ -8,6 +8,21 @@
   font-family: sans-serif;
 }
 
+#upload-form input {
+  width: 100%;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#upload-form #submit {
+  border: 1px solid black;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
 span {
   font-size: inherit;
 }
@@ -123,6 +138,18 @@ form #submit-btn:hover {
   padding: 1rem;
 }
 
+.navbar #cart {
+  font-size: 2rem;
+}
+
+.navbar #cart:hover {
+  cursor: pointer;
+}
+
+.navbar #profile:hover {
+  cursor: pointer;
+}
+
 .navbar ul {
   width: 100%;
   display: -webkit-box;
@@ -220,8 +247,7 @@ form #submit-btn:hover {
 
 .container {
   margin: auto;
-  width: 92%;
-  margin: 2%;
+  width: 66%;
   border: solid 1px brown;
   padding: 2%;
 }
@@ -240,50 +266,22 @@ form #submit-btn:hover {
   font-size: 2.5em;
 }
 
+.container .cart-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+}
+
+.container .cart-grid span {
+  margin: 0.5rem 0;
+}
+
 .container .cart-header {
   font-size: 1.25em;
+  margin-top: 1rem;
+  border-bottom: 1px dotted black;
   color: #333;
-}
-
-.container .cart-row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.container .cart-row .cart-item {
-  width: 40%;
-}
-
-.container .cart-row .cart-price {
-  width: 20%;
-  font-size: 1.2em;
-  color: #333;
-}
-
-.container .cart-row .cart-quantity {
-  width: 35%;
-}
-
-.container .cart-row .cart-column {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-bottom: 1px solid #333;
-  margin-right: 1.5em;
-  padding-bottom: 10px;
-  margin-top: 10px;
-}
-
-.container .cart-row .cart-row:last-child {
-  border-bottom: 1px solid #333;
-}
-
-.container .cart-row .cart-row:last-child .cart-column {
-  border: none;
 }
 
 .container .cart-total {
@@ -298,14 +296,16 @@ form #submit-btn:hover {
   margin-right: 20px;
 }
 
-.container .cart-total .cart-total-price {
+.container .cart-total-price {
   color: #333;
-  font-size: 1.1em;
+  font-size: 1.5em;
 }
 
 .container .btn-purchase {
-  padding: 1.5%;
-  background-color: #964747;
+  padding: 0.5rem;
+  background-color: #428bca;
+  color: white;
+  border-radius: 6px;
   display: block;
   margin: auto;
   margin-top: 40px;

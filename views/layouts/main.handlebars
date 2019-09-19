@@ -1,55 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="styles/styles.css" />
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/1.0/auth0-spa-js.production.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <title>YouTune</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <link rel="stylesheet" type="text/css" href="styles/styles.css" />
-  <script src="https://cdn.auth0.com/js/auth0-spa-js/1.0/auth0-spa-js.production.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <title>YouTune</title>
-</head>
+  <body>
+    <nav class="navbar">
+      <ul>
+        <li id="heading">
+          <a id="hovChange" href="/"
+            ><span id="texY" style="color: black;">Your</span
+            ><span id="texT" style="color: red;">Tune</span></a
+          >
+        </li>
+        <li>
+          <input type="search" name="searchbar" id="searchbar" placeholder="Search for songs..." />
+        </li>
+        <li class="gated" id="profile">Profile</li>
+        <li class="gated" id="cart">
+          <i class="fa fa-shopping-cart"></i>
+          <span id="cartDisplay"></span>
+        </li>
+        <button id="login">Login</button>
+        <button class="gated" id="logout">Logout</button>
+      </ul>
+    </nav>
+    <div style="margin-bottom: 8rem"></div>
+    {{{body}}}
 
-<body>
-  <nav class="navbar">
-    <ul>
-      <li id="heading"><a id="hovChange" href ="/"><span id="texY" style="color: black;">Your</span><span id="texT" style="color: red;">Tune</span></a></li>
-      <li>
-        <input type="search" name="searchbar" id="searchbar" placeholder="Search for songs..." />
-      </li>
-      <li class="gated"><a id="profile" href="profile">Profile</a></li>
-      <li class="gated"><a id="profile" href="shoppingcart">Shopping Cart</a></li>
-      <li class="gated"><a id="profile" href="contact">Contact</a></li>
-      <button id="login">Login</button>
-      <button id="logout">Logout</button>
-    </ul>
-  </nav>
-  <div style="margin-bottom: 8rem"></div>
-  {{{body}}}
-
-  <footer>
-    &copy; 2019 YouTune
-  </footer>
-  <script src="js/auth.js"></script>
-  <script>
-  var hoverchange = function() {
-    $("#hovChange").hover(
-      function() {
-        $("#texY").css("color", "red");
-        $("#texT").css("color", "black");
-      },
-      function() {
-        // on mouseout, reset the background colour
-        $("#texY").css("color", "black");
-        $("#texT").css("color", "red");
-      }
-    );
-  };
-  hoverchange();
-  </script>
-</body>
-
+    <footer>
+      &copy; 2019 YouTune
+    </footer>
+    <script src="js/auth.js"></script>
+    <script src="js/nav.js"></script>
+  </body>
 </html>
