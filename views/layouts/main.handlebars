@@ -10,13 +10,29 @@
     />
     <link rel="stylesheet" type="text/css" href="styles/styles.css" />
     <script src="https://cdn.auth0.com/js/auth0-spa-js/1.0/auth0-spa-js.production.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script>
+      var hoverchange = function() {
+        $(".hovChange").hover(
+          function() {
+            $(".texY").css("color", "red");
+            $(".texT").css("color", "black");
+          },
+            function() {
+              // on mouseout, reset the background colour
+              $(".texY").css("color", "black");
+              $(".texT").css("color", "red");
+            }
+        );
+      };
+    </script>
     <title>YouTune</title>
   </head>
 
   <body>
     <nav class="navbar">
       <ul>
-        <li id="heading">Your<span style="color: red;">Tune</span></li>
+        <li id="heading"><a id="hovChange" href ="/"><span id="texY" style="color: black">Your</span><span id="texT" style="color: red;">Tune</span></a></li>
         <li>
           <input type="search" name="searchbar" id="searchbar" placeholder="Search for songs..." />
         </li>
