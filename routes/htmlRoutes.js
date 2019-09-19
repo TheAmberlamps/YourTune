@@ -11,7 +11,21 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/profile", (req, res) => {});
+  // Search
+  app.get("/search", (req, res) => {
+    const query = req.query.q;
+    db.track.findAll({}).then(data => {
+      const out = [];
+      for (let track of data) {
+        if (track.title.toUpperCase().match(query.toUpperCase())) {
+          out.push(track);
+        }
+      }
+      res.render("index", {
+        tracks: out
+      });
+    });
+  });
 
   app.get("/topsong", function(req, res) {
     res.render("topsong");
@@ -27,5 +41,9 @@ module.exports = function(app) {
 
   app.get("/contact", function(req, res) {
     res.render("contact");
+  });
+
+  app.get("*", function(req, res) {
+    res.render("404");
   });
 };
