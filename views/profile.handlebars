@@ -1,0 +1,28 @@
+<div id="mySongs">
+  <h1>Uploads</h1>
+  {{#each tracks}}
+  {{> track/track-block}}
+  {{/each}}
+
+  <form method="POST" action="/api/tracks?t={{ token }}" id="upload-form">
+    <label>Title</label>
+    <input type="text" name="title" id="" />
+    <br />
+    <label>Preview</label>
+    <input type="text" name="preview" id="" />
+    <br />
+    <label>Download</label>
+    <input type="text" name="download" id="" />
+    <br />
+    <label>Price</label>
+    <input type="text" name="price" id="" />
+    <br />
+    <input type="submit" value="Submit" id="submit" />
+  </form>
+</div>
+
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+></script>
+<script src="/js/index.js"></script>
