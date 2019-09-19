@@ -304,11 +304,11 @@ form #submit-btn:hover {
 }
 
 .container .btn-purchase {
-  padding: 2%;
+  padding: 1.5%;
   background-color: #964747;
   display: block;
   margin: auto;
   margin-top: 40px;
-  font-size: 1.75em;
+  font-size: 1em;
 }
 /*# sourceMappingURL=styles.css.map */
