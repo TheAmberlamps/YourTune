@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,7 +8,8 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link rel="stylesheet" type="text/css" href="styles/styles.css" />
   <script src="https://cdn.auth0.com/js/auth0-spa-js/1.0/auth0-spa-js.production.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <title>YouTune</title>
 </head>
 
@@ -19,53 +21,35 @@
         <input type="search" name="searchbar" id="searchbar" placeholder="Search for songs..." />
       </li>
       <li class="gated"><a id="profile" href="profile">Profile</a></li>
+      <li class="gated"><a id="profile" href="shoppingcart">Shopping Cart</a></li>
+      <li class="gated"><a id="profile" href="contact">Contact</a></li>
       <button id="login">Login</button>
       <button id="logout">Logout</button>
     </ul>
   </nav>
   <div style="margin-bottom: 8rem"></div>
   {{{body}}}
-  <section class="container content-section">
-    <h2 class="section-header" id="cart-section">YOUR SHOPPING CART</h2>
-    <div class="cart-row">
-      <span class="cart-item cart-header cart-column">ITEM</span>
-      <span class="cart-price cart-header cart-column">PRICE</span>
-      <span class="cart-quantity cart-header cart-column">QUANTITY</span>
-    </div>
-    <div class="cart-items">
-    </div>
-    <div class="cart-total">
-      <strong class="cart-tax-title">Tax</strong>
-      <span class="cart-total-tax">$0.00</span><br>
-      <strong class="cart-total-title">Total</strong>
-      <span class="cart-total-price">$0.00</span>
-    </div>
-    <div class="btn-container">
-      <a href="#form">
-        <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
-      </a>
-    </div>
-  </section>
+
   <footer>
     &copy; 2019 YouTune
   </footer>
   <script src="js/auth.js"></script>
-</body>
   <script>
-    var hoverchange = function() {
-      $("#hovChange").hover(
-        function() {
-          $("#texY").css("color", "red");
-          $("#texT").css("color", "black");
-        },
-        function() {
-          // on mouseout, reset the background colour
-          $("#texY").css("color", "black");
-          $("#texT").css("color", "red");
-        }
-      );
-    };
-      hoverchange();
-    </script>
-</html>
+  var hoverchange = function() {
+    $("#hovChange").hover(
+      function() {
+        $("#texY").css("color", "red");
+        $("#texT").css("color", "black");
+      },
+      function() {
+        // on mouseout, reset the background colour
+        $("#texY").css("color", "black");
+        $("#texT").css("color", "red");
+      }
+    );
+  };
+  hoverchange();
+  </script>
+</body>
 
+</html>
